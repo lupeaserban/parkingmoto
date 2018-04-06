@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <title>Motorcycle meters</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+    
+    .info{
+      display: block;
+    }
+    ul{
+      list-style: none;
+    }
+
+    li {
+      position:relative;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    li#under::before{
+      content: "\f111";
+      color: #3bb2d0;
+      font-size: 15px;
+      padding-right: 0.5em;
+    }
+
+    li#between::before{
+      content: "\f111";
+      color: #fbb03b;
+      font-size: 15px;
+      padding-right: 0.5em;
+    }
+
+    li#over::before{
+      content: "\f111";
+      color: #e55e5e;
+      font-size: 15px;
+      padding-right: 0.5em;
+    }
+
+    h2 {
+      padding-right: 1em;
+      float:left;
+      display: block;
+      padding-left: 2em;
+      font-family: 'Merriweather', serif;
+    }
+    #map {
+      position:absolute;
+      width: 100%;
+      height: 100%;
+    }
+    svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+   </style>
+</head>
+<body>
+  <h2>Motorcycle parking. Meter prices are per hour.</h2>
+<div class="info">
+  <ul>
+    <li id='under'>40&#162; and under</li>
+    <li id='between'>between 40&#162; and 80&#162;</li>
+    <li id='over'>over 90&#162;</li>
+  </ul>
+</div>
+<div id='map'></div>
+<script src="d3vis.js"></script>
+</body>
+</html>
