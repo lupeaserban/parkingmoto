@@ -35,7 +35,7 @@ var path = d3.geoPath();
 
 // 'GET' the .csv file and save the data in the array named: points, ASYNC req
 var points =[];
-d3.csv("data/meters.csv").then(function(data) {
+d3.csv("./data/meters.csv").then(function(data) {
   points = data;
   //check to see what data you got back as a response
   console.log(points);
