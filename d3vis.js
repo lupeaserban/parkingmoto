@@ -23,7 +23,6 @@ function getD3() {
   var bbox = body.getBoundingClientRect();
   var center = map.getCenter();
   var zoom = map.getZoom();
-  // FIGURE OUT WHY!! 512 is hardcoded tile size, might need to be 256 or changed to suit your map config.
   var scale = (512) * 0.5 / Math.PI * Math.pow(2, zoom); //
   var projection = d3.geoMercator()
     .center([center.lng, center.lat])
