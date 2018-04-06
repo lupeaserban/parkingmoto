@@ -5,8 +5,11 @@ var map = new mapboxgl.Map({
     center: [	-122.431297, 37.773972], //set map center
     container: 'map', // container id
     style: 'mapbox://styles/lupeaserban/cjfbyjjtv04362rpavlr7edsx', //stylesheet location
-    zoom: 12 // starting zoom
+    zoom: 12, // starting zoom
+    logoPosition: 'top-left'
 });
+
+map.addControl(new mapboxgl.AttributionControl(), 'top-right');
 
 // Setup our svg layer that we can manipulate with d3
 var vis = map.getCanvasContainer();
