@@ -39,7 +39,6 @@ var path = d3.geoPath();
 var points =[];
 d3.csv("./data/meters.csv").then(function(data) {
   points = data;
-  //check to see what data you got back as a response
   console.log(points);
   var dots = svg.selectAll("circle")
     .data(points)
@@ -48,7 +47,7 @@ d3.csv("./data/meters.csv").then(function(data) {
     .classed("dot", true)
     .attr("r", 5)
     .style("opacity", 1)
-    .style("stroke-width", .2)    // set the stroke width
+    .style("stroke-width", .2)  
     .style("stroke", "black");
   // print the dots to the screen with the correct x,y position
   function render() {
